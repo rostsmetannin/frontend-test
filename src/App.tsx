@@ -1,21 +1,13 @@
 import React from "react"
-import logo from "./logo.svg"
+import { useState } from "react"
 import "./App.css"
+import { CardMediaItem } from "./components/Card/CardMediaItem"
 
-function App() {
+export const App = () => {
+  const [checked, setChecked] = useState<boolean>(false)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <CardMediaItem {...{ checked, setChecked, label: "Flood zone 3" }} />
     </div>
   )
 }
-
-export default App
